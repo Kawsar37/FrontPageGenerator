@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cover Page and Report Format</string>
+    <string name="select_batch">Select Batch</string>
+    <string name="select_dept">Select Dept.</string>
+</resources>

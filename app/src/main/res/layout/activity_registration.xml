@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Registration">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_register_head"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            android:text="Please enter your details to registration."
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_register_full_name"
+            android:layout_below="@+id/text_view_register_head"
+            android:text="Full Name"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:layout_marginTop="50dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_text_register_full_name"
+            android:hint="Enter your full name"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            android:padding="17dp"
+            android:layout_below="@id/text_view_register_full_name"
+            android:background="@drawable/border"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_register_email"
+            android:layout_below="@+id/edit_text_register_full_name"
+            android:text="Email"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_text_register_email"
+            android:hint="Enter your email address"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"
+            android:padding="17dp"
+            android:layout_below="@id/text_view_register_email"
+            android:background="@drawable/border"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_register_id"
+            android:layout_below="@+id/edit_text_register_email"
+            android:text="Student ID"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_text_register_id"
+            android:hint="Enter your id"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:padding="17dp"
+            android:layout_below="@id/text_view_register_id"
+            android:background="@drawable/border"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_register_dept"
+            android:textStyle="bold"
+            android:layout_below="@+id/edit_text_register_id"
+            android:text="Department"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dept_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_below="@id/text_view_register_dept"
+            android:hint="Select Dept."
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            >
+        <AutoCompleteTextView
+            android:background="@drawable/border"
+            android:id="@+id/auto_complete_dept"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_register_batch"
+            android:layout_below="@+id/dept_box"
+            android:text="Batch"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/batch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_below="@id/text_view_register_batch"
+            android:hint="Select Batch"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            >
+            <AutoCompleteTextView
+                android:id="@+id/auto_complete_textview"
+                android:layout_width="match_parent"
+                android:background="@drawable/border"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_password"
+            android:layout_below="@+id/text_view_register_dept"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textColor="#555555"
+            android:textSize="16sp"
+            android:layout_marginTop="160dp"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_text_password"
+            android:hint="Create a strong password"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            android:padding="17dp"
+
+            android:layout_below="@id/text_view_password"
+            android:background="@drawable/border"/>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="200dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_text_password"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:text="Sign In"
+            android:textSize="23dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </RelativeLayout>
+
+</ScrollView>
