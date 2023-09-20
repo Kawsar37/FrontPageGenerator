@@ -2,4 +2,6 @@
     <string name="app_name">Cover Page and Report Format</string>
     <string name="select_batch">Select Batch</string>
     <string name="select_dept">Select Dept.</string>
+    <string name="path_to_times_new_roman_ttc">/path/to/times_new_roman.ttc</string>
+    <string name="timesnewroman">TimesNewRoman</string>
 </resources>

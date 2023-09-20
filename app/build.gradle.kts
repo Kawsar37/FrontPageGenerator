@@ -1,3 +1,5 @@
+import com.android.build.api.dsl.Packaging
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -27,6 +29,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        exclude("com/itextpdf/io/font/cmap_info.txt")
+        exclude ("com/itextpdf/io/font/cmap/*")
+    }
 }
 
 dependencies {
@@ -42,4 +48,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("com.itextpdf:itext7-core:8.0.1")
+    implementation ("com.google.android.gms:play-services-safetynet:18.0.1")
 }
