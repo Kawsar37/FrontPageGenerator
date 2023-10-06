@@ -21,7 +21,7 @@
                 android:textSize="30sp" />
 
             <EditText
-                android:id="@+id/edit_text_name"
+                android:id="@+id/assignment_edit_text_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -30,7 +30,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edit_text_id"
+                android:id="@+id/assignment_edit_text_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -39,7 +39,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_batch"
+                android:id="@+id/assignment_edit_text_batch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -48,7 +48,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_year"
+                android:id="@+id/assignment_edit_text_year"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -57,7 +57,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_semester"
+                android:id="@+id/assignment_edit_text_semester"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -66,7 +66,16 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_course_code"
+                android:id="@+id/assignment_edit_text_session"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:ems="10"
+                android:hint="Session      [Required]"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/assignment_edit_text_course_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -75,7 +84,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_course_title"
+                android:id="@+id/assignment_edit_text_course_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -83,46 +92,9 @@
                 android:hint="Course Title      [Required]"
                 android:inputType="text" />
 
-            <EditText
-                android:id="@+id/edit_text_lab_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Experiment Number      [Optional]"
-                android:inputType="none" />
 
             <EditText
-                android:id="@+id/edit_text_ex_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="false"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Experiment Date       [Optional]"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/edit_text_sub_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="false"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Submission Date       [Optional]"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/edit_text_exp_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Experiment Name        [Optional]"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/edit_text_submitted_teacher1"
+                android:id="@+id/assignment_edit_text_submitted_teacher1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -131,7 +103,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_pos_teacher1"
+                android:id="@+id/assignment_edit_text_pos_teacher1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -140,7 +112,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_submitted_teacher2"
+                android:id="@+id/assignment_edit_text_submitted_teacher2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -149,7 +121,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_pos_teacher2"
+                android:id="@+id/assignment_edit_text_pos_teacher2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -158,7 +130,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_submitted_teacher3"
+                android:id="@+id/assignment_edit_text_submitted_teacher3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -167,7 +139,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_pos_teacher3"
+                android:id="@+id/assignment_edit_text_pos_teacher3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -177,7 +149,7 @@
 
 
             <EditText
-                android:id="@+id/edit_text_file_name"
+                android:id="@+id/assignment_edit_text_file_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -186,7 +158,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/submit_button_lab_report"
+                android:id="@+id/assignment_submit_button_lab_report"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"

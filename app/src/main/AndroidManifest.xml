@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +16,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-<!--        <activity-->
-<!--        android:name=".LabReportInfo"-->
-<!--        android:exported="false" />-->
+        <activity
+            android:name=".ProjectProposalSuccess"
+            android:exported="false" />
+        <activity
+            android:name=".ProjectProposalInfo"
+            android:exported="false" />
+        <activity
+            android:name=".AssignmentSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LabReportSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AssignmentInfo"
+            android:exported="false" />
+        <activity
+            android:name=".LabReportInfo"
+            android:exported="false" />
         <activity
             android:name=".Homepage"
             android:exported="false" />
@@ -32,10 +47,11 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".LabReportInfo"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

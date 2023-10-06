@@ -21,52 +21,7 @@
                 android:textSize="30sp" />
 
             <EditText
-                android:id="@+id/edit_text_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Name      [Required]"
-                android:inputType="textPersonName" />
-
-            <EditText
-                android:id="@+id/edit_text_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Id      [Required]"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/edit_text_batch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Batch      [Required]"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/edit_text_year"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Year      [Required]"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/edit_text_semester"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Semester      [Required]"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/edit_text_course_code"
+                android:id="@+id/pp_edit_text_course_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -75,7 +30,7 @@
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_course_title"
+                android:id="@+id/pp_edit_text_course_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -83,101 +38,111 @@
                 android:hint="Course Title      [Required]"
                 android:inputType="text" />
 
-            <EditText
-                android:id="@+id/edit_text_lab_no"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Experiment Number      [Optional]"
-                android:inputType="none" />
 
             <EditText
-                android:id="@+id/edit_text_ex_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="false"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Experiment Date       [Optional]"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/edit_text_sub_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:focusable="false"
-                android:layout_margin="12dp"
-                android:ems="10"
-                android:hint="Submission Date       [Optional]"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/edit_text_exp_name"
+                android:id="@+id/pp_edit_text_project_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Experiment Name        [Optional]"
+                android:hint="Proposed Title        [Required]"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_submitted_teacher1"
+                android:id="@+id/pp_team_member1_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Submitted to Teacher 1 name:       [Required]"
+                android:hint="Team Member 1 Name        [Required]"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_pos_teacher1"
+                android:id="@+id/pp_team_member1_Id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Designation\n[E.g.: Lecturer, Dept. of CSE]        [Required]"
+                android:hint="Team Member 1 Id      [Required]"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_submitted_teacher2"
+                android:id="@+id/pp_team_member2_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Submitted to Teacher 2 name:      [Optional]"
+                android:hint="Team Member 2 Name        [Optional]"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_pos_teacher2"
+                android:id="@+id/pp_team_member2_Id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Designation\n[E.g.: Lecturer, Dept. of CSE]          [Optional]"
+                android:hint="Team Member 2 Id      [Optional]"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_submitted_teacher3"
+                android:id="@+id/pp_team_member3_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Submitted to Teacher 3 name:     [Optional]"
+                android:hint="Team Member 3 Name        [Optional]"
                 android:inputType="text" />
 
             <EditText
-                android:id="@+id/edit_text_pos_teacher3"
+                android:id="@+id/pp_team_member3_Id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
-                android:hint="Designation\n[E.g.: Lecturer, Dept. of CSE]         [Optional]"
+                android:hint="Team Member 3 Id      [Optional]"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/pp_team_member4_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:ems="10"
+                android:hint="Team Member 4 Name        [Optional]"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/pp_team_member4_Id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:ems="10"
+                android:hint="Team Member 4 Id      [Optional]"
                 android:inputType="text" />
 
 
             <EditText
-                android:id="@+id/edit_text_file_name"
+                android:id="@+id/pp_team_batch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:ems="10"
+                android:hint="Batch     [Required]"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/pp_team_session"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:ems="10"
+                android:hint="Session     [Required]"
+                android:inputType="text" />
+
+
+
+            <EditText
+                android:id="@+id/pp_edit_text_file_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -186,7 +151,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/submit_button_lab_report"
+                android:id="@+id/pp_submit_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"

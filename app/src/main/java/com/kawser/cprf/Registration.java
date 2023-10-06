@@ -71,14 +71,18 @@ public class Registration extends AppCompatActivity implements GoogleApiClient.C
                                 public void onResult(@NonNull SafetyNetApi.RecaptchaTokenResult recaptchaTokenResult) {
                                     Status status = recaptchaTokenResult.getStatus();
                                     if ((status != null) && (status.isSuccess())) {
-                                        Toast.makeText(Registration.this, "Verification Successful", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Registration.this, "Captcha Verification Successful!", Toast.LENGTH_SHORT).show();
                                         checkBox.setTextColor(Color.BLUE);
+                                    }
+                                    else {
+                                        Toast.makeText(Registration.this, "Captcha Verification Failed!", Toast.LENGTH_SHORT).show();
+                                        checkBox.setChecked(false);
                                     }
                                 }
                             });
                 } else {
                     checkBox.setTextColor(Color.RED);
-                    Toast.makeText(Registration.this, "Verification Not Complete", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registration.this, "Captcha Verification Not Complete", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -131,7 +135,7 @@ public class Registration extends AppCompatActivity implements GoogleApiClient.C
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkBox.isChecked()) {
+                if (checkBox.getCurrentTextColor() == Color.BLUE) {
                     String Name = name.getText().toString().trim();
                     String Email = email.getText().toString().trim();
                     String ID = stdid.getText().toString().trim();
@@ -187,6 +191,7 @@ public class Registration extends AppCompatActivity implements GoogleApiClient.C
                     });
                 }
                 else {
+                    checkBox.setChecked(false);
                     Toast.makeText(Registration.this, "Captcha verification failed!\n", Toast.LENGTH_SHORT).show();
                 }
             }
