@@ -92,6 +92,7 @@ public class AssignmentInfo extends AppCompatActivity {
                     intent.putExtra("batch", batch.getText().toString());
                     intent.putExtra("year", year.getText().toString());
                     intent.putExtra("semester", semester.getText().toString());
+                    intent.putExtra("session", session.getText().toString());
                     intent.putExtra("course_code", course_code.getText().toString());
                     intent.putExtra("course_title", course_title.getText().toString());
                     intent.putExtra("teacher1", teacher1.getText().toString());

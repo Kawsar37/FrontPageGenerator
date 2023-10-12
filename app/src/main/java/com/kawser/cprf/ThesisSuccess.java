@@ -32,18 +32,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class ProjectProposalSuccess extends AppCompatActivity {
+public class ThesisSuccess extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_project_proposal_success);
+        setContentView(R.layout.activity_thesis_success);
 
-        Button saveButton = findViewById(R.id.pp_success_save_button);
+        Button saveButton = findViewById(R.id.th_success_save_button);
 
         String Course_code = getIntent().getStringExtra("course_code");
         String Course_title = getIntent().getStringExtra("course_title");
-        String Project_title = getIntent().getStringExtra("project_title");
+        String Thesis_title = getIntent().getStringExtra("thesis_title");
         String Team_member1_name = getIntent().getStringExtra("team_member1_name");
         String Team_member1_id = getIntent().getStringExtra("team_member1_id");
         String Team_member2_name = getIntent().getStringExtra("team_member2_name");
@@ -63,13 +63,13 @@ public class ProjectProposalSuccess extends AppCompatActivity {
             public void onClick(View view) {
                 // Save the PDF file to the device
                 try {
-                    createPdf(Course_code, Course_title, Project_title, Team_member1_name, Team_member1_id, Team_member2_name, Team_member2_id, Team_member3_name, Team_member3_id, Team_member4_name, Team_member4_id, Team_batch, Team_session, File_name);
+                    createPdf(Course_code, Course_title, Thesis_title, Team_member1_name, Team_member1_id, Team_member2_name, Team_member2_id, Team_member3_name, Team_member3_id, Team_member4_name, Team_member4_id, Team_batch, Team_session, File_name);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
 
-            private void createPdf(String Course_code, String Course_title, String Project_title, String Team_member1_name, String Team_member1_id, String Team_member2_name, String Team_member2_id, String Team_member3_name, String Team_member3_id, String Team_member4_name, String Team_member4_id, String Team_batch, String Team_session, String FileName) throws IOException {
+            private void createPdf(String Course_code, String Course_title, String Thesis_title, String Team_member1_name, String Team_member1_id, String Team_member2_name, String Team_member2_id, String Team_member3_name, String Team_member3_id, String Team_member4_name, String Team_member4_id, String Team_batch, String Team_session, String FileName) throws IOException {
                 String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
 //            Text f_name = new Text(FileName + ".pdf");
 
@@ -126,8 +126,8 @@ public class ProjectProposalSuccess extends AppCompatActivity {
                 C_title.add(C_title_val);
                 C_title.setFont(timesNewRomanFont).setFontSize(18).setTextAlignment(TextAlignment.CENTER);
 
-                Text PP_title = new Text("Project Title: ").setBold();
-                Text PP_title_val = new Text(Project_title);
+                Text PP_title = new Text("Thesis Title: ").setBold();
+                Text PP_title_val = new Text(Thesis_title);
                 Paragraph Ppos_title = new Paragraph();
                 Ppos_title.add(PP_title);
                 Ppos_title.add(PP_title_val);
@@ -247,12 +247,11 @@ public class ProjectProposalSuccess extends AppCompatActivity {
                 document.close();
                 pdfDocument.close();
                 writer.close();
-                Toast.makeText(ProjectProposalSuccess.this, "Project Proposal Front Page Successfully Saved On\n➡️" + pdfPath, Toast.LENGTH_LONG).show();
+                Toast.makeText(ThesisSuccess.this, "Thesis Report Front Page Successfully Saved On\n➡️" + pdfPath, Toast.LENGTH_LONG).show();
             }
         });
     }
-
-    public void ProjectProposal_buttonOpenFile(View view){
+    public void Thesis_buttonOpenFile(View view){
         Intent intent = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
             intent = new Intent(Intent.ACTION_VIEW, MediaStore.Downloads.EXTERNAL_CONTENT_URI);
@@ -260,5 +259,4 @@ public class ProjectProposalSuccess extends AppCompatActivity {
         intent.setType("*/*");
         this.startActivity(intent);
     }
-
 }

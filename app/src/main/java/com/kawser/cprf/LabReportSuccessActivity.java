@@ -244,7 +244,7 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         document.close();
         pdfDocument.close();
         writer.close();
-        Toast.makeText(this, "Front Page Successfully Saved On\n" + pdfPath, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Front Page Successfully Saved On\n➡️" + pdfPath, Toast.LENGTH_LONG).show();
     }
 
     public void Lab_report_buttonOpenFile(View view){
@@ -255,5 +255,4 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         intent.setType("*/*");
         this.startActivity(intent);
     }
-
 }

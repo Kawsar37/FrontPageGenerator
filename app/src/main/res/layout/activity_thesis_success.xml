@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/pp_success_save_button"
+        android:id="@+id/th_success_save_button"
         android:layout_width="240dp"
         android:layout_height="55dp"
         android:layout_margin="16dp"
@@ -21,11 +21,11 @@
         app:layout_constraintVertical_bias="0.371" />
 
     <Button
-        android:id="@+id/pp_success_view_button"
+        android:id="@+id/th_success_view_button"
         android:layout_width="240dp"
         android:layout_height="55dp"
         android:layout_margin="16dp"
-        android:onClick="ProjectProposal_buttonOpenFile"
+        android:onClick="Thesis_buttonOpenFile"
         android:text="Open File Manager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -17,6 +17,12 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ThesisSuccess"
+            android:exported="false" />
+        <activity
+            android:name=".ThesisInfo"
+            android:exported="false" />
+        <activity
             android:name=".ProjectProposalSuccess"
             android:exported="false" />
         <activity
@@ -33,10 +39,9 @@
             android:exported="false" />
         <activity
             android:name=".LabReportInfo"
-            android:exported="false" />
-        <activity
-            android:name=".Homepage"
-            android:exported="false" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".Homepage" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Registration"
             android:exported="false" />
@@ -47,7 +52,7 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".Homepage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
