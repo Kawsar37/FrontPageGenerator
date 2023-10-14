@@ -33,6 +33,29 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class ProjectProposalSuccess extends AppCompatActivity {
+    // Times new roman font
+    PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
+
+    public ProjectProposalSuccess() throws IOException {
+    }
+
+    public Text ordinal(int n) {
+        final String s;
+        if (11 >= n && n <= 13) {
+            s = "th";
+        } else if (n % 10 == 1) {
+            s = "st";
+        } else if (n % 10 == 2) {
+            s = "nd";
+        } else if (n % 10 == 3) {
+            s = "rd";
+        } else {
+            s = "th";
+        }
+        Text st = new Text(s).setFont(timesNewRomanFont).setFontSize(8);
+        st.setTextRise(6);
+        return st;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +107,7 @@ public class ProjectProposalSuccess extends AppCompatActivity {
                 pdfDocument.setDefaultPageSize(PageSize.A4);
                 document.setMargins(1,1,1,1);
 
-                // times new roman font
-                PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
+                // times new roman italic font
                 PdfFont timesNewRomanFontItalic = PdfFontFactory.createFont("res/font/timesnewromanitalic.ttf");
 
                 Paragraph knowledge_tech =  new Paragraph("\n\n\nKnowledge & Technology").setFont(timesNewRomanFontItalic).setFontSize(12).setTextAlignment(TextAlignment.CENTER);
@@ -199,7 +221,7 @@ public class ProjectProposalSuccess extends AppCompatActivity {
                 Text mem_batch = new Text("Batch: ").setBold();
                 Text mem_batch_val = new Text(Team_batch);
                 Paragraph batch = new Paragraph();
-                batch.add(mem_batch).add(mem_batch_val);
+                batch.add(mem_batch).add(mem_batch_val).add(ordinal(Integer.parseInt(Team_batch)));
                 batch.setFont(timesNewRomanFont).setFontSize(14).setTextAlignment(TextAlignment.CENTER);
                 batch.setMultipliedLeading(0.7f);
 

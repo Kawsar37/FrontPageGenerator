@@ -37,6 +37,30 @@ import java.io.OutputStream;
 
 public class LabReportSuccessActivity extends AppCompatActivity {
 
+    // times new roman font
+    PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
+
+    public LabReportSuccessActivity() throws IOException {
+    }
+
+    public Text ordinal(int n) {
+        final String s;
+        if (11 >= n && n <= 13) {
+            s = "th";
+        } else if (n % 10 == 1) {
+            s = "st";
+        } else if (n % 10 == 2) {
+            s = "nd";
+        } else if (n % 10 == 3) {
+            s = "rd";
+        } else {
+            s = "th";
+        }
+        Text st = new Text(s).setFont(timesNewRomanFont).setFontSize(8);
+        st.setTextRise(6);
+        return st;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +75,7 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         String Batch = getIntent().getStringExtra("batch");
         String Year = getIntent().getStringExtra("year");
         String Semester = getIntent().getStringExtra("semester");
+        String Session = getIntent().getStringExtra("session");
         String Course_code = getIntent().getStringExtra("course_code");
         String Course_title = getIntent().getStringExtra("course_title");
         String Lab_no = getIntent().getStringExtra("lab_no");
@@ -71,57 +96,16 @@ public class LabReportSuccessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Save the PDF file to the device
                 try {
-                    createPdf(FileName, Name, Id, Batch, Year, Semester, Course_code, Course_title, Lab_no, Exp_date, Sub_date, Exp_name, Teacher1, Teacher1_pos, Teacher2, Teacher2_pos, Teacher3, Teacher3_pos);
+                    createPdf(FileName, Name, Id, Batch, Year, Semester, Session, Course_code, Course_title, Lab_no, Exp_date, Sub_date, Exp_name, Teacher1, Teacher1_pos, Teacher2, Teacher2_pos, Teacher3, Teacher3_pos);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
-
-
-//
-//        Button viewButton = findViewById(R.id.view_button);
-//
-//        viewButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                // Create a File object for the PDF file
-//                File pdfFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/" + FileName + ".pdf");
-//
-//                // Check if the PDF file exists
-//                if (pdfFile.exists()) {
-//                    // Get the full path to the PDF file
-//                    String pdfFilePath = pdfFile.getAbsolutePath();
-//
-//                    // Create a Uri from the full path to the PDF file
-//                    Uri pdfUri = Uri.parse(pdfFilePath);
-//
-//                    // Create an intent with the ACTION_VIEW action and the Uri to the PDF file
-//                    Intent intent = new Intent(Intent.ACTION_VIEW);
-//                    intent.setData(pdfUri);
-//
-//                    try {
-//                        // Start the activity that can view PDF files
-//                        startActivity(intent);
-//                    } catch (ActivityNotFoundException e) {
-//                        // Handle the case where there is no activity that can view PDF files
-//                        e.printStackTrace();
-//                    }
-//                } else {
-//                    Toast.makeText(LabReportSuccessActivity.this, "Please Save Pdf before viewing!\n", Toast.LENGTH_LONG).show();
-//                }
-//
-//
-//
-//            }
-//
-//        });
-
     }
 
 
-    private void createPdf(String FileName, String Name, String Id, String Batch, String Year, String Semester, String Course_code, String Course_title, String Lab_no, String Exp_date, String Sub_date, String Exp_name, String Teacher1, String Teacher1_pos, String Teacher2, String Teacher2_pos, String Teacher3, String Teacher3_pos) throws IOException {
+    private void createPdf(String FileName, String Name, String Id, String Batch, String Year, String Semester, String Session, String Course_code, String Course_title, String Lab_no, String Exp_date, String Sub_date, String Exp_name, String Teacher1, String Teacher1_pos, String Teacher2, String Teacher2_pos, String Teacher3, String Teacher3_pos) throws IOException {
         String pdfPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
 //            Text f_name = new Text(FileName + ".pdf");
 
@@ -136,8 +120,6 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         pdfDocument.setDefaultPageSize(PageSize.A4);
         document.setMargins(1,1,1,1);
 
-        // times new roman font
-        PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
 
         Text t1 = new Text("\n\n\nBANGLADESH ARMY UNIVERSITY OF ENGINEERING &\nTECHNOLOGY (BAUET)").setFont(timesNewRomanFont);
         Paragraph BauetName = new Paragraph(t1).setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER);
@@ -210,19 +192,19 @@ public class LabReportSuccessActivity extends AppCompatActivity {
 //            table.addCell(new Cell().add(new Paragraph("ID: " + Id)).setBorder(Border.NO_BORDER));
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Batch: " + Batch).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Batch: " + Batch).add(ordinal(Integer.parseInt(Batch))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher2).setBold().setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Year: " + Year).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Year: " + Year).add(ordinal(Integer.parseInt(Year))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher2_pos).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Semester: " + Semester).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Semester: " + Semester).add(ordinal(Integer.parseInt(Semester))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher3).setFont(timesNewRomanFont).setBold().setFontSize(14)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Session: " + Session).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher3_pos).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
             /*
