@@ -24,6 +24,7 @@ public class LabReportInfo extends AppCompatActivity {
     EditText batch;
     EditText year;
     EditText semester;
+    EditText session;
     EditText course_code;
     EditText course_title;
     EditText lab_no;
@@ -44,7 +45,7 @@ public class LabReportInfo extends AppCompatActivity {
 //    public String ordinal(int n) {
 //        final String s;
 //        if (11 <= n && n <= 13) {
-//            s = n + "<sup>th</sup>";
+//            s = "th";
 //        } else if (n % 10 == 1) {
 //            s = "st";
 //        } else if (n % 10 == 2) {
@@ -109,6 +110,7 @@ public class LabReportInfo extends AppCompatActivity {
         batch = (EditText) findViewById(R.id.edit_text_batch);
         year = (EditText) findViewById(R.id.edit_text_year);
         semester = (EditText) findViewById(R.id.edit_text_semester);
+        session = (EditText) findViewById(R.id.edit_text_session);
         course_code = (EditText) findViewById(R.id.edit_text_course_code);
         course_title = (EditText) findViewById(R.id.edit_text_course_title);
         lab_no = (EditText) findViewById(R.id.edit_text_lab_no);
@@ -174,6 +176,7 @@ public class LabReportInfo extends AppCompatActivity {
                     intent.putExtra("batch", batch.getText().toString());
                     intent.putExtra("year", year.getText().toString());
                     intent.putExtra("semester", semester.getText().toString());
+                    intent.putExtra("session", session.getText().toString());
                     intent.putExtra("course_code", course_code.getText().toString());
                     intent.putExtra("course_title", course_title.getText().toString());
                     intent.putExtra("lab_no", lab_no.getText().toString());

@@ -38,8 +38,30 @@ import java.io.OutputStream;
 
 
 public class AssignmentSuccessActivity extends AppCompatActivity {
-//    Button view = findViewById(R.id.assignment_success_view_button);
-//    public static int PICK_FILE = 99;
+    // Times new roman font
+    PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
+
+    public AssignmentSuccessActivity() throws IOException {
+    }
+
+
+    public Text ordinal(int n) {
+        final String s;
+        if (11 >= n && n <= 13) {
+            s = "th";
+        } else if (n % 10 == 1) {
+            s = "st";
+        } else if (n % 10 == 2) {
+            s = "nd";
+        } else if (n % 10 == 3) {
+            s = "rd";
+        } else {
+            s = "th";
+        }
+        Text st = new Text(s).setFont(timesNewRomanFont).setFontSize(8);
+        st.setTextRise(6);
+        return st;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,9 +136,6 @@ public class AssignmentSuccessActivity extends AppCompatActivity {
                 pdfDocument.setDefaultPageSize(PageSize.A4);
                 document.setMargins(1,1,1,1);
 
-                // times new roman font
-                PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
-
                 Text t1 = new Text("\n\n\nBANGLADESH ARMY UNIVERSITY OF ENGINEERING &\nTECHNOLOGY (BAUET)").setFont(timesNewRomanFont);
                 Paragraph BauetName = new Paragraph(t1).setBold().setFontSize(18).setTextAlignment(TextAlignment.CENTER);
 
@@ -167,16 +186,16 @@ public class AssignmentSuccessActivity extends AppCompatActivity {
 //            table.addCell(new Cell().add(new Paragraph("ID: " + Id)).setBorder(Border.NO_BORDER));
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 
-                table.addCell(new Cell().add(new Paragraph("Batch: " + Batch).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("Batch: " + Batch).add(ordinal(Integer.parseInt(Batch))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
                 table.addCell(new Cell().add(new Paragraph(Teacher2).setBold().setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 
-                table.addCell(new Cell().add(new Paragraph("Year: " + Year).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("Year: " + Year).add(ordinal(Integer.parseInt(Year))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
                 table.addCell(new Cell().add(new Paragraph(Teacher2_pos).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
-                table.addCell(new Cell().add(new Paragraph("Semester: " + Semester).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+                table.addCell(new Cell().add(new Paragraph("Semester: " + Semester).add(ordinal(Integer.parseInt(Semester))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
                 table.addCell(new Cell().add(new Paragraph(Teacher3).setFont(timesNewRomanFont).setBold().setFontSize(14)).setBorder(Border.NO_BORDER));
 
                 table.addCell(new Cell().add(new Paragraph("Session: " + Session).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));

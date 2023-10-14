@@ -64,6 +64,14 @@
                 android:ems="10"
                 android:hint="Semester      [Required]"
                 android:inputType="text" />
+            <EditText
+                android:id="@+id/edit_text_session"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:ems="10"
+                android:hint="Session      [Required]"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/edit_text_course_code"
