@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,11 +20,13 @@ public class Homepage extends AppCompatActivity {
         Button buttonThesis = findViewById(R.id.button_thesis_report);
         Button buttonEvaluation = findViewById(R.id.button_evaluation);
 
+        Toast.makeText(this, "This app created by Kawsar CSE 14th💀", Toast.LENGTH_LONG).show();
+
         buttonLabReport.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Homepage.this, LabReportInfo.class);
+                Intent intent = new Intent(Homepage.this, main_activity.class);
                 startActivity(intent);
             }
         });

@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Homepage">
+    tools:context=".Homepage"
+    android:background="@drawable/bg3"
+
+    android:scaleType="centerCrop"
+    >
 
     <Button
         android:id="@+id/button_thesis_report"
@@ -12,18 +16,24 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Thesis Report"
+        android:background="@drawable/custom_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.857"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:textSize="20sp"
+        android:fontFamily="@font/firasans"
+        />
 
     <Button
         android:id="@+id/button_project_proposal"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:fontFamily="@font/firasans"
         android:layout_margin="20dp"
         android:text="Project Proposal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,6 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.713"
+        android:background="@drawable/custom_btn"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -39,6 +50,8 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/firasans"
         android:text="Assignment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,14 +59,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.56"
+        android:background="@drawable/custom_btn"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Your Option"
-        android:textColor="@color/black"
+        android:text="Select Option To Create"
+        android:textColor="@color/white"
+        android:fontFamily="@font/timesnewroman"
+        android:textFontWeight="600"
 
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,8 +80,11 @@
         app:layout_constraintVertical_bias="0.135" />
 
     <Button
+        android:background="@drawable/custom_btn"
         android:id="@+id/button_lab_report"
         android:layout_width="250dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/firasans"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Lab Report"
@@ -75,22 +94,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.284"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        />
 
     <Button
         android:id="@+id/button_evaluation"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Lab Report Evaluation Page"
+        android:text="Evaluation Page"
+        android:textSize="20sp"
+        android:fontFamily="@font/firasans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.412"
+        app:layout_constraintVertical_bias="0.421"
+        android:background="@drawable/custom_btn"
         tools:ignore="MissingConstraints" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

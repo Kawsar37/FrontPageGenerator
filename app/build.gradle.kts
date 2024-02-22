@@ -33,6 +33,7 @@ android {
         exclude("com/itextpdf/io/font/cmap_info.txt")
         exclude ("com/itextpdf/io/font/cmap/*")
     }
+
 }
 
 dependencies {
@@ -50,4 +51,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.itextpdf:itext7-core:8.0.1")
     implementation ("com.google.android.gms:play-services-safetynet:18.0.1")
+
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
+
 }

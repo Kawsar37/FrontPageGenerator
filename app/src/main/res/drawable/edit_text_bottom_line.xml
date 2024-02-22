@@ -1,0 +1,8 @@
+<!-- res/drawable/edit_text_bottom_line.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:color="#D3D3D3"
+        android:width="2dp"
+    />
+</shape>

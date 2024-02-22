@@ -47,7 +47,7 @@ public class AssignmentSuccessActivity extends AppCompatActivity {
 
     public Text ordinal(int n) {
         final String s;
-        if (11 >= n && n <= 13) {
+        if (n >= 11 && n <= 13) {
             s = "th";
         } else if (n % 10 == 1) {
             s = "st";
@@ -172,7 +172,7 @@ public class AssignmentSuccessActivity extends AppCompatActivity {
 
 
                 float[] width = {2000f,2000f};
-                Table table = new Table(width).setFixedPosition(60, 80, 640);
+                Table table = new Table(width).setFixedPosition(50, 80, 610);
 
                 table.addCell(new Cell().add(new Paragraph("Submitted By: ").setFont(timesNewRomanFont).setBold().setFontSize(16)).setBorder(Border.NO_BORDER));
                 table.addCell(new Cell().add(new Paragraph("Submitted To: ").setFont(timesNewRomanFont).setBold().setFontSize(16)).setBorder(Border.NO_BORDER));

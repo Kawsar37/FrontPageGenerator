@@ -10,12 +10,18 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
-        android:label="@string/app_name"
+        android:icon="@drawable/logo2"
+        android:label="Cover Page Generator"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".feedback"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard"
+            android:exported="false" />
         <activity
             android:name=".EvaluationDownload"
             android:exported="false" />
@@ -43,9 +49,9 @@
         <activity
             android:name=".LabReportInfo"
             android:exported="false" />
-         <activity
-         android:name=".Homepage"
-         android:exported="false" />
+        <activity
+            android:name=".Homepage"
+            android:exported="false" />
         <activity
             android:name=".Registration"
             android:exported="false" />
@@ -54,6 +60,9 @@
             android:exported="false" />
         <activity
             android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".main_activity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
@@ -65,4 +74,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

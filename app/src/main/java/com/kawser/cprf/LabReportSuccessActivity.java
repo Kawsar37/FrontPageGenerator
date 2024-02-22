@@ -38,14 +38,20 @@ import java.io.OutputStream;
 public class LabReportSuccessActivity extends AppCompatActivity {
 
     // times new roman font
-    PdfFont timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
+    PdfFont timesNewRomanFont;
 
-    public LabReportSuccessActivity() throws IOException {
+    {
+        try {
+            timesNewRomanFont = PdfFontFactory.createFont("res/font/timesnewroman.ttf");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
     public Text ordinal(int n) {
         final String s;
-        if (11 >= n && n <= 13) {
+        if (n >= 11 && n <= 13) {
             s = "th";
         } else if (n % 10 == 1) {
             s = "st";
@@ -94,6 +100,28 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(LabReportSuccessActivity.this, "** Please Wait Until Saved Successfully Message **", Toast.LENGTH_LONG).show();
+//                Intent intent = new Intent();
+//                intent.putExtra("name", Name);
+//                intent.putExtra("id", Id);
+//                intent.putExtra("batch", Batch);
+//                intent.putExtra("year", Year);
+//                intent.putExtra("semester", Semester);
+//                intent.putExtra("session", Session);
+//                intent.putExtra("course_code", Course_code);
+//                intent.putExtra("course_title", Course_title);
+//                intent.putExtra("lab_no", Lab_no);
+//                intent.putExtra("exp_date", Exp_date);
+//                intent.putExtra("sub_date", Sub_date);
+//                intent.putExtra("exp_name", Exp_name);
+//                intent.putExtra("teacher1", Teacher1);
+//                intent.putExtra("teacher1_pos", Teacher1_pos);
+//                intent.putExtra("teacher2", Teacher2);
+//                intent.putExtra("teacher2_pos", Teacher2_pos);
+//                intent.putExtra("teacher3", Teacher3);
+//                intent.putExtra("teacher3_pos", Teacher3_pos);
+//                intent.putExtra("file_name", FileName);
+
                 // Save the PDF file to the device
                 try {
                     createPdf(FileName, Name, Id, Batch, Year, Semester, Session, Course_code, Course_title, Lab_no, Exp_date, Sub_date, Exp_name, Teacher1, Teacher1_pos, Teacher2, Teacher2_pos, Teacher3, Teacher3_pos);
@@ -118,7 +146,7 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         Document document = new Document(pdfDocument);
 
         pdfDocument.setDefaultPageSize(PageSize.A4);
-        document.setMargins(1,1,1,1);
+        document.setMargins(0,50,0,50);
 
 
         Text t1 = new Text("\n\n\nBANGLADESH ARMY UNIVERSITY OF ENGINEERING &\nTECHNOLOGY (BAUET)").setFont(timesNewRomanFont);
@@ -178,38 +206,40 @@ public class LabReportSuccessActivity extends AppCompatActivity {
 
 
         float[] width = {2000f,2000f};
-        Table table = new Table(width).setFixedPosition(60, 80, 640);
+        Table table = new Table(width).setFixedPosition(50, 80, 610);
 
-        table.addCell(new Cell().add(new Paragraph("Submitted By: ").setFont(timesNewRomanFont).setBold().setFontSize(16)).setBorder(Border.NO_BORDER));
-        table.addCell(new Cell().add(new Paragraph("Submitted To: ").setFont(timesNewRomanFont).setBold().setFontSize(16)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Submitted By : ").setFont(timesNewRomanFont).setBold().setFontSize(16)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Submitted To : ").setFont(timesNewRomanFont).setBold().setFontSize(16)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Name: " + Name).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Name       : " + Name).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher1).setBold().setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("ID: " + Id).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("ID            : " + Id).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher1_pos).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
 //            table.addCell(new Cell().add(new Paragraph("ID: " + Id)).setBorder(Border.NO_BORDER));
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Batch: " + Batch).add(ordinal(Integer.parseInt(Batch))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Batch       : " + Batch).add(ordinal(Integer.parseInt(Batch))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher2).setBold().setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 //            table.addCell(new Cell().add(new Paragraph()).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Year: " + Year).add(ordinal(Integer.parseInt(Year))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Year         : " + Year).add(ordinal(Integer.parseInt(Year))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher2_pos).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Semester: " + Semester).add(ordinal(Integer.parseInt(Semester))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Semester  : " + Semester).add(ordinal(Integer.parseInt(Semester))).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher3).setFont(timesNewRomanFont).setBold().setFontSize(14)).setBorder(Border.NO_BORDER));
 
-        table.addCell(new Cell().add(new Paragraph("Session: " + Session).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
+        table.addCell(new Cell().add(new Paragraph("Session     : " + Session).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
         table.addCell(new Cell().add(new Paragraph(Teacher3_pos).setFont(timesNewRomanFont).setFontSize(14)).setBorder(Border.NO_BORDER));
 
             /*
             to less bold .setFontColor(new Color(0, 0, 0, 0.5))
              */
+
+
         document.add(BauetName);
         document.add(address);
         document.add(image);
@@ -226,7 +256,7 @@ public class LabReportSuccessActivity extends AppCompatActivity {
         document.close();
         pdfDocument.close();
         writer.close();
-        Toast.makeText(this, "Front Page Successfully Saved On\n➡️" + pdfPath, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Front Page Successfully Saved !!!\nCheck Download Folder :3\n", Toast.LENGTH_LONG).show();
     }
 
     public void Lab_report_buttonOpenFile(View view){

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +20,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Submit Your Information"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/timesnewroman"/>
 
             <EditText
                 android:id="@+id/edit_text_name"
@@ -26,6 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:hint="Name      [Required]"
                 android:inputType="textPersonName" />
 
@@ -34,12 +40,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
                 android:hint="Id      [Required]"
                 android:inputType="text" />
 
             <EditText
                 android:id="@+id/edit_text_batch"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -49,6 +59,8 @@
 
             <EditText
                 android:id="@+id/edit_text_year"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -58,6 +70,8 @@
 
             <EditText
                 android:id="@+id/edit_text_semester"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -67,6 +81,8 @@
             <EditText
                 android:id="@+id/edit_text_session"
                 android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
@@ -75,6 +91,8 @@
 
             <EditText
                 android:id="@+id/edit_text_course_code"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -84,6 +102,8 @@
 
             <EditText
                 android:id="@+id/edit_text_course_title"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
@@ -96,6 +116,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
                 android:hint="Experiment Number      [Optional]"
                 android:inputType="none" />
@@ -106,6 +128,8 @@
                 android:layout_height="wrap_content"
                 android:focusable="false"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
                 android:hint="Experiment Date       [Optional]"
                 android:inputType="none" />
@@ -114,6 +138,8 @@
                 android:id="@+id/edit_text_sub_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:focusable="false"
                 android:layout_margin="12dp"
                 android:ems="10"
@@ -124,6 +150,8 @@
                 android:id="@+id/edit_text_exp_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:layout_margin="12dp"
                 android:ems="10"
                 android:hint="Experiment Name        [Optional]"
@@ -134,9 +162,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
-                android:hint="Submitted to Teacher 1 name:       [Required]"
+                android:hint="Submitted to Teacher 1 name:      [Required]"
                 android:inputType="text" />
+
 
             <EditText
                 android:id="@+id/edit_text_pos_teacher1"
@@ -144,6 +175,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:hint="Designation\n[E.g.: Lecturer, Dept. of CSE]        [Required]"
                 android:inputType="text" />
 
@@ -153,6 +186,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:hint="Submitted to Teacher 2 name:      [Optional]"
                 android:inputType="text" />
 
@@ -161,6 +196,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
                 android:hint="Designation\n[E.g.: Lecturer, Dept. of CSE]          [Optional]"
                 android:inputType="text" />
@@ -170,6 +207,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
                 android:hint="Submitted to Teacher 3 name:     [Optional]"
                 android:inputType="text" />
@@ -180,6 +219,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:ems="10"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:hint="Designation\n[E.g.: Lecturer, Dept. of CSE]         [Optional]"
                 android:inputType="text" />
 
@@ -189,15 +230,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D3D3D3"
                 android:ems="10"
                 android:hint="Pdf File Name      [Required]"
                 android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/submit_button_lab_report"
+                android:textAlignment="center"
+                android:fontFamily="@font/firasans"
+                android:textSize="18sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:background="@drawable/custom_btn"
+                android:paddingBottom="10dp"
                 android:text="Submit" />
         </LinearLayout>
 

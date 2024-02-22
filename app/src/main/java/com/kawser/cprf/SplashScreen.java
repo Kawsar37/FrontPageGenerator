@@ -1,9 +1,9 @@
 package com.kawser.cprf;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -32,13 +32,13 @@ public class SplashScreen extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        in.setClass(getApplicationContext(), OnBoard.class);
+                        in.setClass(getApplicationContext(), dashboard.class);
                         startActivity(in);
                         finish();
                     }
                 });
             }
         };
-        _timer.schedule(i, (int) (3000));
+        _timer.schedule(i, (int) (2000));
     }
 }

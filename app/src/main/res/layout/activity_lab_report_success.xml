@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LabReportSuccessActivity">
+    tools:context=".LabReportSuccessActivity"
+    android:background="@drawable/bg3">
 
 
     <Button
@@ -18,6 +19,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/firasans"
+        android:background="@drawable/custom_btn"
         app:layout_constraintVertical_bias="0.406" />
 
     <Button
@@ -25,6 +28,8 @@
         android:layout_width="240dp"
         android:layout_height="55dp"
         android:layout_margin="16dp"
+        android:fontFamily="@font/firasans"
+        android:background="@drawable/custom_btn"
         android:onClick="Lab_report_buttonOpenFile"
         android:text="Open File Manager"
         app:layout_constraintBottom_toBottomOf="parent"
